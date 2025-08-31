@@ -64,4 +64,49 @@ if __name__ == "__main__":
 
     print(tablet.power_on())      # Polymorphism in action
     print(tablet.draw())
-w
+
+
+#activity2 polymorphism challenge
+# Base Class
+class Vehicle:
+    def __init__(self, name):
+        self.name = name
+
+    def move(self):
+        raise NotImplementedError("Subclasses must implement this method.")
+
+
+# Derived Classes
+class Car(Vehicle):
+    def move(self):
+        return f"{self.name} is 🚗 Driving on the road!"
+
+
+class Plane(Vehicle):
+    def move(self):
+        return f"{self.name} is ✈️ Flying in the sky!"
+
+
+class Boat(Vehicle):
+    def move(self):
+        return f"{self.name} is 🚤 Sailing on the water!"
+
+
+class Bicycle(Vehicle):
+    def move(self):
+        return f"{self.name} is 🚴 Pedaling along the path!"
+
+
+# Example usage
+if __name__ == "__main__":
+    vehicles = [
+        Car("Toyota"),
+        Plane("Boeing 747"),
+        Boat("Speedboat"),
+        Bicycle("Mountain Bike")
+    ]
+
+    # Polymorphism in action: same method call, different behaviors
+    for v in vehicles:
+        print(v.move())
+
